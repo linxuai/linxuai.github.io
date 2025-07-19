@@ -4,369 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>鹿见万象 - 美搭AI智能时尚搭配助手</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .header {
-            background: #8e24aa;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            font-family: '华文行楷', '楷体', 'STKaiti', serif;
-            letter-spacing: 0.3em;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #ffffff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section {
-            padding: 4rem 0;
-        }
-
-        /* 第1个section：公司简介和品牌理念 */
-        .company-section {
-            background: linear-gradient(135deg, #b3d1ff 0%, #d4e3ff 25%, #e6eeff 50%, #f0f4ff 75%, #b3d1ff 100%) !important;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-        }
-
-        .company-section h2 {
-            color: #003cb3;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            letter-spacing: 0.2em;
-        }
-
-        .company-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            text-align: left;
-            color: #003cb3;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* 添加图片样式 */
-        .company-logo {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .brand-philosophy {
-            margin-top: 3rem;
-            padding-top: 3rem;
-            position: relative;
-        }
-
-        .brand-philosophy h3 {
-            color: #003cb3;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.15em;
-        }
-
-        .brand-philosophy p {
-            color: #003cb3;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        /* 添加鹿图片样式 */
-        .deer-image {
-            width: 250px;
-            height: 250px;
-            margin: 2rem auto;
-            display: block;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease;
-        }
-
-        .deer-image:hover {
-            transform: scale(1.05);
-        }
-
-        /* 第2个section：app相关和下载区域 */
-        .app-section {
-            background: #d4d8e0 !important;
-            background: linear-gradient(135deg, #c8d0d8 0%, #ffffff 50%, #c8d0d8 100%) !important;
-            padding: 4rem 0;
-        }
-
-        .app-section h2 {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 3rem;
-            color: #66B032;
-            letter-spacing: 0.15em;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .hero h1 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #66B032;
-            letter-spacing: 0.15em;
-        }
-
-        .slogan {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: transform 0.3s;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: #FB9902;
-            color: white;
-        }
-
-        .btn-secondary {
-            background: #8601AF;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            background: #ffffff;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #FB9902;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .feature-card p {
-            color: #666;
-        }
-
-        .download-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .download-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .download-card h3 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .download-card p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        .download-links {
-            margin-top: 1.5rem;
-        }
-
-        .coming-soon {
-            background: #FB9902;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            display: inline-block;
-        }
-
-        /* 第3个section：联系方式 */
-        .contact-section {
-            background: #2A0934;
-            color: #66B032;
-            padding: 4rem 0;
-        }
-
-        .contact-section h2 {
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 3rem;
-            color: #66B032;
-            letter-spacing: 0.15em;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-info h3 {
-            color: #66B032;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .contact-info p {
-            color: #66B032;
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
-
-        .contact-info strong {
-            color: #66B032;
-            font-weight: 600;
-        }
-
-        /* 第4个section：footer */
-        .footer {
-            background: #2A0934;
-            color: #66B032;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-            
-            .download-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header class="header">
@@ -376,6 +14,7 @@
                 <li><a href="#company">公司简介</a></li>
                 <li><a href="#app">产品介绍</a></li>
                 <li><a href="#contact">联系我们</a></li>
+                <li><a href="lujianwanxiang_en.html" class="en-link">English Version</a></li>
             </ul>
         </nav>
     </header>
@@ -383,14 +22,35 @@
     <!-- 第1个section：公司简介和品牌理念 -->
     <section id="company" class="section company-section">
         <div class="container">
-            <h2>公司简介</h2>
-            <p>鹿见万象信息科技（上海）有限公司成立于2025年，注册地位于上海市，是一家专注于信息技术服务与人工智能相关技术应用的科技企业。公司致力于技术研发、产品设计与相关服务的融合创新，积极推动智能技术在多元场景下的探索与落地。</p>
-            <p>公司秉持"稳健发展、合规经营、持续创新"的理念，依法依规开展各项业务，致力于为社会创造长期价值，推动科技与文化的融合发展。</p>
+            <h2 class="main-title title-blue">公司简介</h2>
+            <p>
+  鹿见万象信息技术（上海）有限公司成立于2025年6月，注册地位于上海市，是一家专注于信息技术服务与人工智能相关技术应用的科技企业。
+  公司由两位资深工程师联合创立，均为股东及核心团队成员，二人在知名企业拥有多年产品开发经验。其中一位作为核心技术负责人，凭借独特的女性视角与扎实的创新能力，独立主导了产品从架构设计到全量代码开发的完整过程；另一位则拥有从 0 到 1 成功开发时尚 App 的宝贵经历，在产品落地与用户需求挖掘上经验深厚。
+  公司致力于技术研发、产品设计与相关服务的融合创新，积极推动智能技术在多元场景下的探索与落地。
+</p>
+<p>
+  公司秉持"稳健发展、合规经营、持续创新"的理念，依法依规开展各项业务，致力于为社会创造长期价值，推动科技与文化的融合发展。
+</p>
             
             <div class="brand-philosophy">
-                <img src="deer_leep.jpg" alt="鹿见万象品牌形象" class="deer-image">
-                <h3>品牌理念</h3>
-                <p>鹿见万象：鹿（优雅、敏捷、自然之美）+ 见（洞察、发现、智慧）+ 万象（包罗万象、无限可能）</p>
+                <div class="brand-philosophy-card">
+                    <img src="deer_leep.jpg" alt="鹿见万象品牌形象" class="deer-image">
+                    <h3 class="sub-title title-blue">品牌理念</h3>
+                    <div class="brand-breakdown">
+                        <div class="character-item">
+                            <span class="character">鹿</span>
+                            <span class="description">—— 优雅、敏捷、自然之美</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character">见</span>
+                            <span class="description">—— 洞察、发现、智慧</span>
+                        </div>
+                        <div class="character-item">
+                            <span class="character">万象</span>
+                            <span class="description">—— 包罗万象、无限可能</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -398,73 +58,69 @@
     <!-- 第2个section：app相关和下载区域 -->
     <section id="app" class="section app-section">
         <div class="container">
-            <h2>应用简介</h2>
+            <h2 class="main-title title-green">应用介绍</h2>
             <div class="hero">
-                <h1>美搭AI</h1>
-                <div class="slogan">秒速搭配，让您的时尚在每一刻自信绽放</div>
+                <h3 class="sub-title title-green">美搭AI</h3>
+                <div class="slogan">✨ 秒速搭配，让您的时尚在每一刻自信绽放 ✨</div>
                 <p>用AI智慧发现时尚之美</p>
                 <p>您的专属AI造型师和穿搭灵感社区！上传衣物，AI秒出美搭，虚拟试衣、换发型一键搞定，衣橱管理也超方便。</p>
                 <div class="cta-buttons">
-                    <a href="#download" class="btn btn-primary">立即下载</a>
-                    <a href="#features" class="btn btn-secondary">了解更多</a>
+                    <button class="btn btn-primary" disabled>即将上线</button>
                 </div>
             </div>
 
-            <h2>核心功能</h2>
+            <h3 class="sub-title title-green">核心功能</h3>
             <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">👗</div>
-                    <h3>AI智能搭配</h3>
-                    <p>上传您的衣物照片，AI智能分析并推荐完美搭配方案，让您的穿搭更加时尚出众。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🪞</div>
-                    <h3>虚拟试衣</h3>
-                    <p>体验虚拟试衣功能，在购买前预览搭配效果，避免购买不适合的衣物。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💇‍♀️</div>
-                    <h3>发型变换</h3>
-                    <p>一键更换不同发型，找到最适合您的发型风格，提升整体形象。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👔</div>
-                    <h3>商务穿搭</h3>
-                    <p>专业的商务穿搭推荐，让您在职场中展现专业形象和自信魅力。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👕</div>
-                    <h3>衣橱管理</h3>
-                    <p>智能管理您的衣橱，分类整理衣物，轻松找到合适的搭配单品。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>社区分享</h3>
-                    <p>与时尚达人交流分享，获取最新潮流资讯和穿搭灵感。</p>
+                <div class="feature-coming-soon">
+                    <h3>功能即将上线</h3>
+                    <p>项目正式上线后，我们将为您展示完整的功能特色，敬请期待！</p>
                 </div>
             </div>
 
-            <h2 id="download">下载应用</h2>
+            <div class="applicable-scenarios">
+                <h3 class="sub-title title-green">适用场景</h3>
+                <div class="scenarios-content">
+                    <p>美搭AI广泛适用于个人时尚管理与企业智能服务</p>
+                    <div class="scenarios-grid">
+                        <div class="scenario-card">
+                            <h4>
+                                <span class="scenario-icon">👤</span>
+                                面向C端
+                            </h4>
+                            <p>日常穿搭推荐、虚拟试衣、造型尝试、衣橱管理、社群分享等多场景</p>
+                        </div>
+                        <div class="scenario-card">
+                            <h4>
+                                <span class="scenario-icon">🏢</span>
+                                面向B端
+                            </h4>
+                            <p>支持服饰品牌、电商平台、美妆机构接入智能试衣和推荐服务，提升用户体验和转化率</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-title title-green">下载应用</h3>
             <div class="download-cards">
                 <div class="download-card">
                     <h3>iOS版本</h3>
                     <p>支持iPhone和iPad设备</p>
                     <div class="download-links">
-                        <a href="#" class="btn btn-primary">App Store下载</a>
+                        <button class="btn btn-primary" disabled>即将上线</button>
                     </div>
                 </div>
                 <div class="download-card">
                     <h3>Android版本</h3>
                     <p>支持所有Android设备</p>
                     <div class="download-links">
-                        <a href="#" class="btn btn-primary">Google Play下载</a>
+                        <button class="btn btn-primary" disabled>即将上线</button>
                     </div>
                 </div>
                 <div class="download-card">
                     <h3>鸿蒙版本</h3>
                     <p>专为鸿蒙系统优化</p>
                     <div class="download-links">
-                        <a href="#" class="btn btn-primary">华为应用市场</a>
+                        <button class="btn btn-primary" disabled>即将上线</button>
                     </div>
                 </div>
             </div>
@@ -474,16 +130,16 @@
     <!-- 第3个section：联系方式 -->
     <section id="contact" class="section contact-section">
         <div class="container">
-            <h2>联系我们</h2>
+            <h2 class="main-title title-green">联系我们</h2>
             <div class="contact-info">
                 <div>
                     <h3>公司信息</h3>
-                    <p><strong>公司名称：</strong>鹿见万象信息科技（上海）有限公司</p>
+                    <p><strong>公司名称：</strong>鹿见万象信息技术（上海）有限公司</p>
                     <p><strong>官方网站：</strong>www.lujianwanxiang.com</p>
                 </div>
                 <div>
                     <h3>联系方式</h3>
-                    <p><strong>邮箱：</strong>thron_xu@163.com</p>
+                    <p><strong>邮箱：</strong>contact@aimeida.cn</p>
                     <p><strong>地址：</strong>中国（上海）自由贸易试验区临港新片区海洋一路333号1号楼、2号楼</p>
                 </div>
             </div>
@@ -493,7 +149,7 @@
     <!-- 第4个section：footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 鹿见万象信息科技（上海）有限公司. 保留所有权利.</p>
+            <p>&copy; 2025 鹿见万象信息技术（上海）有限公司. 保留所有权利.</p>
         </div>
     </footer>
 
