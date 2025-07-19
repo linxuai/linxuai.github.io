@@ -10,6 +10,11 @@
     <header class="header">
         <nav class="nav">
             <div class="logo">鹿见万象</div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#company">公司简介</a></li>
                 <li><a href="#app">产品介绍</a></li>
@@ -49,8 +54,8 @@
                             <span class="character">万象</span>
                             <span class="description">—— 包罗万象、无限可能</span>
                         </div>
-                    </div>
-                </div>
+            </div>
+        </div>
             </div>
         </div>
     </section>
@@ -58,16 +63,16 @@
     <!-- 第2个section：app相关和下载区域 -->
     <section id="app" class="section app-section">
         <div class="container">
-            <h2 class="main-title title-green">应用介绍</h2>
+            <h2 class="main-title title-green">产品介绍</h2>
             <div class="hero">
                 <h3 class="sub-title title-green">美搭AI</h3>
                 <div class="slogan">✨ 秒速搭配，让您的时尚在每一刻自信绽放 ✨</div>
-                <p>用AI智慧发现时尚之美</p>
+            <p>用AI智慧发现时尚之美</p>
                 <p>您的专属AI造型师和穿搭灵感社区！上传衣物，AI秒出美搭，虚拟试衣、换发型一键搞定，衣橱管理也超方便。</p>
                 <div class="cta-buttons">
                     <button class="btn btn-primary" disabled>即将上线</button>
                 </div>
-            </div>
+        </div>
 
             <h3 class="sub-title title-green">核心功能</h3>
             <div class="features">
@@ -75,7 +80,7 @@
                     <h3>功能即将上线</h3>
                     <p>项目正式上线后，我们将为您展示完整的功能特色，敬请期待！</p>
                 </div>
-            </div>
+                </div>
 
             <div class="applicable-scenarios">
                 <h3 class="sub-title title-green">适用场景</h3>
@@ -88,15 +93,15 @@
                                 面向C端
                             </h4>
                             <p>日常穿搭推荐、虚拟试衣、造型尝试、衣橱管理、社群分享等多场景</p>
-                        </div>
+                </div>
                         <div class="scenario-card">
                             <h4>
                                 <span class="scenario-icon">🏢</span>
                                 面向B端
                             </h4>
                             <p>支持服饰品牌、电商平台、美妆机构接入智能试衣和推荐服务，提升用户体验和转化率</p>
-                        </div>
-                    </div>
+                </div>
+                </div>
                 </div>
             </div>
 
@@ -154,12 +159,32 @@
     </footer>
 
     <script>
+        // 原有的滚动效果代码
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
                 header.style.background = 'rgba(142, 36, 170, 0.95)';
             } else {
                 header.style.background = '#8e24aa';
+            }
+        });
+        
+        // 新增的移动端菜单控制代码
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuToggle && navLinks) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+                
+                // 点击菜单项后关闭菜单
+                navLinks.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A') {
+                        navLinks.classList.remove('active');
+                    }
+                });
             }
         });
     </script>
