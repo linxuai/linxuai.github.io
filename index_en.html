@@ -10,6 +10,11 @@
     <header class="header">
         <nav class="nav">
             <div class="logo logo-en">Lu Jian Wan Xiang</div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#company">Company</a></li>
                 <li><a href="#app">App</a></li>
@@ -155,6 +160,7 @@
     </footer>
 
     <script>
+    // 原有的滚动效果代码
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
         if (window.scrollY > 50) {
@@ -163,6 +169,25 @@
             header.style.background = '#8e24aa';
         }
     });
-    </script>
+    
+    // 新增的移动端菜单控制代码
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // 点击菜单项后关闭菜单
+            navLinks.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>
