@@ -82,7 +82,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
 }
 
 .section {
@@ -132,13 +132,18 @@ body {
     text-indent: 2em;
 }
 
+/* 英文版公司介绍段落 - 移除首行缩进 */
+html[lang="en"] .company-section p {
+    text-indent: 0;
+}
+
 /* 品牌理念卡片样式 */
 .brand-philosophy-card {
     background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     padding: 0 0 2rem 0;
-    margin: 2rem auto;
+    margin: 1rem auto;
     max-width: 600px;
     text-align: center;
     border: 1px solid #e0e0e0;
@@ -170,12 +175,13 @@ body {
     max-width: 500px;
     text-align: center;
     line-height: 2.2;
+    padding: 0 2rem; /* 添加左右padding */
 }
 
 .brand-philosophy-card .character-item {
     margin-bottom: 1.5rem;
     line-height: 1.8;
-    text-align: center;
+    text-align: left;
 }
 
 .brand-philosophy-card .character {
@@ -202,15 +208,17 @@ body {
 
 .slogan {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem; /* 从1rem增加到2rem */
     font-weight: 500;
     color: #333;
+    text-align: left; /* 从center改为left */
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #333;
+    text-align: left;
 }
 
 .btn {
@@ -268,11 +276,8 @@ body {
     margin: 3rem auto;
     max-width: 800px;
     text-align: center;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid #e9ecef;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 0;
+
 }
 
 .scenarios-content p {
@@ -280,6 +285,7 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .scenarios-grid {
