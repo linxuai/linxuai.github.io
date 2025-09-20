@@ -56,7 +56,7 @@ body {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     font-family: '华文行楷', '楷体', 'STKaiti', serif;
     letter-spacing: 0.3em;
@@ -112,20 +112,20 @@ body {
 }
 
 .section {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
 }
 
 /* 主标题统一样式 */
 .main-title {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     letter-spacing: 0.05em;
     text-align: center;
 }
 
 /* 副标题统一样式 */
 .sub-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
     letter-spacing: 0.03em;
     text-align: center;
@@ -138,6 +138,10 @@ body {
 
 .title-green {
     color: #66B032;
+}
+
+.title-contact {
+    color: #66a3ff;
 }
 
 /* 公司简介部分 */
@@ -191,7 +195,7 @@ html[lang="en"] .company-section p {
 
 .brand-philosophy-card h3 {
     color: #003cb3;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
     letter-spacing: 0.15em;
 }
@@ -224,12 +228,12 @@ html[lang="en"] .company-section p {
 /* 应用介绍部分 */
 .app-section {
     background: linear-gradient(135deg, #d8e0e8 0%, #ffffff 50%, #d8e0e8 100%);
-    padding: 4rem 0;
+    padding: 3.5rem 0;
 }
 
 .hero {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .slogan {
@@ -462,37 +466,37 @@ html[lang="en"] .company-section p {
 /* 联系我们 */
 .contact-section {
     background: #2A0934;
-    color: #66B032;
-    padding: 4rem 0;
+    color: #66a3ff;
+    padding: 3.5rem 0;
 }
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
 
 .contact-info h3 {
-    color: #66B032;
+    color: #66a3ff;
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
 .contact-info p {
-    color: #66B032;
+    color: #66a3ff;
     margin-bottom: 0.8rem;
     line-height: 1.6;
 }
 
 .contact-info strong {
-    color: #66B032;
+    color: #66a3ff;
     font-weight: 600;
 }
 
 /* 页脚 */
 .footer {
     background: #2A0934;
-    color: #66B032;
+    color: #66a3ff;
     text-align: center;
     padding: 2rem 0;
 }
