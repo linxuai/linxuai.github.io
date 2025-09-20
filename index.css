@@ -33,6 +33,28 @@ body {
     height: 100%;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.company-logo:hover {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 .logo {
     font-size: 2rem;
     font-weight: bold;
@@ -58,6 +80,7 @@ body {
 
 .nav-links li {
     height: 100%;
+    flex: 1;
 }
 
 .nav-links a {
@@ -71,7 +94,9 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    min-width: 100px;
 }
 
 .nav-links a:hover {
@@ -93,7 +118,7 @@ body {
 .main-title {
     font-size: 1.6rem;
     margin-bottom: 2rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.05em;
     text-align: center;
 }
 
@@ -101,7 +126,7 @@ body {
 .sub-title {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.03em;
     text-align: center;
 }
 
@@ -239,7 +264,65 @@ html[lang="en"] .company-section p {
     transform: translateY(-2px);
 }
 
-/* 即将上线功能卡片样式 */
+/* 功能卡片样式 */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 0 1rem;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(142, 36, 170, 0.1);
+    border: 1px solid rgba(142, 36, 170, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(142, 36, 170, 0.2);
+    border-color: rgba(142, 36, 170, 0.3);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8e24aa, #4caf50);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.feature-card h4 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+/* 即将上线功能卡片样式（保留作为备用） */
 .feature-coming-soon {
     text-align: center;
     padding: 3rem 2rem;
@@ -474,6 +557,20 @@ html[lang="en"] .company-section p {
 
 /* 移动端样式 */
 @media (max-width: 768px) {
+    .logo-container {
+        gap: 8px;
+    }
+    
+    .company-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+        letter-spacing: 0.2em;
+    }
+    
     .mobile-menu-toggle {
         display: flex !important;
     }
@@ -569,5 +666,29 @@ html[lang="en"] .company-section p {
     
     .contact-info {
         grid-template-columns: 1fr;
+    }
+    
+    /* 移动端功能卡片样式 */
+    .features {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 0.5rem !important;
+    }
+    
+    .feature-card {
+        padding: 1.5rem !important;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .feature-card h4 {
+        font-size: 1rem !important;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem !important;
     }
 } 
