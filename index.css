@@ -86,7 +86,7 @@ body {
 .nav-links a {
     color: white;
     text-decoration: none;
-    padding: 0 1.2rem;
+    padding: 0 0.8rem;
     border-radius: 0;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -97,6 +97,7 @@ body {
     justify-content: center;
     width: 100%;
     min-width: 100px;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -146,7 +147,7 @@ body {
 }
 
 .company-section p {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
     text-align: left;
@@ -200,7 +201,7 @@ html[lang="en"] .company-section p {
     max-width: 500px;
     text-align: center;
     line-height: 2.2;
-    padding: 0 2rem; /* 添加左右padding */
+    padding: 0 0.5rem; /* 减少左右padding */
 }
 
 .brand-philosophy-card .character-item {
@@ -232,16 +233,16 @@ html[lang="en"] .company-section p {
 }
 
 .slogan {
-    font-size: 1.2rem;
-    margin-bottom: 2rem; /* 从1rem增加到2rem */
+    font-size: 1.1rem;
+    margin-bottom: 1rem; /* 从1rem增加到2rem */
     font-weight: 500;
     color: #333;
     text-align: left; /* 从center改为left */
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     color: #333;
     text-align: left;
 }
@@ -558,7 +559,9 @@ html[lang="en"] .company-section p {
 /* 移动端样式 */
 @media (max-width: 768px) {
     .logo-container {
-        gap: 8px;
+        gap: 6px;
+        flex: 1;
+        min-width: 0;
     }
     
     .company-logo {
@@ -567,12 +570,25 @@ html[lang="en"] .company-section p {
     }
     
     .logo {
-        font-size: 1.5rem;
-        letter-spacing: 0.2em;
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        overflow: visible;
     }
     
     .mobile-menu-toggle {
         display: flex !important;
+    }
+    
+    /* 移动端标题样式 */
+    .main-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .sub-title {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
     }
     
     .nav-links {
@@ -672,7 +688,8 @@ html[lang="en"] .company-section p {
     .features {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
-        padding: 0 0.5rem !important;
+        padding: 0 !important;
+        margin: 2rem 0 !important;
     }
     
     .feature-card {
