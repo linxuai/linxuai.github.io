@@ -29,7 +29,6 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
     height: 100%;
 }
 
@@ -40,8 +39,8 @@ body {
 }
 
 .company-logo {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -49,26 +48,12 @@ body {
     transition: all 0.3s ease;
 }
 
-.company-logo:hover {
-    transform: scale(1.1);
-    border-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
 
 .logo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
     font-family: '华文行楷', '楷体', 'STKaiti', serif;
     letter-spacing: 0.3em;
-    background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    transform: scale(1.05);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .nav-links {
@@ -112,7 +97,7 @@ body {
 }
 
 .section {
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
 }
 
 /* 主标题统一样式 */
@@ -146,7 +131,7 @@ body {
 
 /* 公司简介部分 */
 .company-section {
-    padding: 6rem 0 3rem 0;
+    padding: 5.5rem 0 2.5rem 0;
     background: linear-gradient(135deg, #b8d8ff 0%, #f8fcff 50%, #a8d0ff 100%);
 }
 
@@ -209,8 +194,6 @@ html[lang="en"] .company-section p {
 }
 
 .brand-philosophy-card .character-item {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
     text-align: left;
 }
 
@@ -228,12 +211,12 @@ html[lang="en"] .company-section p {
 /* 应用介绍部分 */
 .app-section {
     background: linear-gradient(135deg, #d8e0e8 0%, #ffffff 50%, #d8e0e8 100%);
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
 }
 
 .hero {
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .slogan {
@@ -467,7 +450,7 @@ html[lang="en"] .company-section p {
 .contact-section {
     background: #2A0934;
     color: #66B032;
-    padding: 3.5rem 0;
+    padding: 2.5rem 0;
 }
 
 .contact-info {
@@ -675,9 +658,6 @@ html[lang="en"] .company-section p {
 
     .brand-philosophy-card .character-item{
         font-size: 0.9rem;
-        margin-bottom: 1.2rem;
-        line-height: 1.5;
-        text-align: left;
     }
     .slogan {
         font-size: 1.0rem;
@@ -732,4 +712,5 @@ html[lang="en"] .company-section p {
 
     .footer {
         font-size: 0.8rem;
+    }
 } 
