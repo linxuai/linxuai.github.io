@@ -498,7 +498,8 @@ html[lang="en"] .company-section p {
     background: #2A0934;
     color: #66B032;
     text-align: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
 }
 
 /* 版本切换按钮样式 */
