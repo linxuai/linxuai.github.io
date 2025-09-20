@@ -1,1 +1,1 @@
-# linxuai.github.io
+deprecated
